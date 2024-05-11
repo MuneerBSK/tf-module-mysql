@@ -6,16 +6,16 @@ resource "aws_security_group" "allow_mysql" {
 
   ingress {
     description      = "Allows docdb from local network"
-    from_port        = 
-    to_port          = 
+    from_port        = 3306
+    to_port          = 3306
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.DEFAULT_VPC_CIDR]
   }
 
   ingress {
     description      = "Allows docdb from default network"
-    from_port        = 
-    to_port          = 
+    from_port        = 3306
+    to_port          = 3306
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR]
   }
