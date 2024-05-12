@@ -1,4 +1,4 @@
-# This created the CNAME Record for MongoDB
+# This created the CNAME Record for Mysql
 resource "aws_route53_record" "mysql" {
   zone_id = data.terraform_remote_state.vpc.outputs.PRIVATE_HOSTED_ZONE_ID
   name    = "mysql-${var.ENV}"
