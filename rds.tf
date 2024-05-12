@@ -21,10 +21,10 @@ resource "aws_db_parameter_group" "mysql_pg" {
 }
 
 resource "aws_db_subnet_group" "mysql_subnet_group" {
-  name       = "robot-${var.ENV}-mysql-subet-group"
+  name       = "robot-${var.ENV}-mysql-subnet-group"
   subnet_ids = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
 
   tags = {
-    Name = "robot-${var.ENV}-mysql-subet-group"
+    Name = "robot-${var.ENV}-mysql-subnet-group"
   }
 }
